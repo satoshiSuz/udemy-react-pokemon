@@ -1,6 +1,6 @@
 import React from 'react';
 import { PokemonParameter } from '../../types/Pokemon';
-
+import './Card.css';
 type Props = {
   pokemon: PokemonParameter;
 };
@@ -16,7 +16,7 @@ export const Card = ({ pokemon }: Props) => {
         <div>タイプ</div>
         {pokemon.types.map((type) => {
           return (
-            <div>
+            <div key={type.type.name}>
               <span className='typeName'>{type.type.name}</span>
             </div>
           );
